@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Add your absolute sitemap URL here once you have a domain, e.g.
+# Sitemap: https://example.com/sitemap.xml

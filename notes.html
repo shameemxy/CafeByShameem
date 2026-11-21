@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Notes — roast levels, fixing a bad cup, small rules</title>
+  <meta name="description" content="A plain-English coffee primer: what roast levels taste like, how to fix sour or bitter coffee, and answers to common beginner questions.">
+  <meta name="theme-color" content="#f4ead9">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Notes — Coffee by Shameem">
+  <meta property="og:description" content="Roast levels, troubleshooting and small rules for better coffee.">
+  <meta property="og:image" content="assets/og-image.png">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/fraunces-latin-full-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/fonts.css">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="index.html" aria-label="Coffee by Shameem, home">
+        <svg viewBox="0 0 32 32" aria-hidden="true"><ellipse cx="16" cy="16" rx="9" ry="12.5" transform="rotate(30 16 16)" fill="currentColor"/><path d="M10.5 6.2c4 3.4 1 6.6 4.6 9.7s.6 6.4 3.4 10" fill="none" stroke="var(--bg)" stroke-width="2" stroke-linecap="round"/></svg>
+        <span>Coffee <em>by Shameem</em></span>
+      </a>
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu"><span></span><span></span></button>
+      <nav class="nav" id="site-nav" aria-label="Primary">
+        <ul>
+          <li><a href="recipes.html">Recipes</a></li>
+          <li><a href="brew-lab.html">Brew Lab</a></li>
+          <li><a href="notes.html" aria-current="page">Notes</a></li>
+          <li><a class="nav-cta" href="recipes.html#random">Surprise me</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-head">
+      <div class="wrap">
+        <p class="eyebrow">The field notes</p>
+        <h1>Small things that <em>change the cup.</em></h1>
+        <p class="lede">What roast levels taste like, how to rescue a bad brew, and quick answers to the questions beginners ask most.</p>
+      </div>
+    </section>
+
+    <!-- ROAST SPECTRUM -->
+    <section class="section" style="padding-top:var(--space-6)" aria-labelledby="roast-title">
+      <div class="wrap">
+        <div data-reveal>
+          <p class="eyebrow">01 / Roast</p>
+          <h2 id="roast-title" style="font-size:var(--step-4);margin-block:var(--space-4) 0">Light to dark</h2>
+        </div>
+        <div class="roast-tabs" id="roast-tabs" role="tablist" aria-label="Roast level" data-reveal style="--i:1"></div>
+        <div class="roast-panel" id="roast-panel" role="tabpanel" tabindex="0" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <!-- FIX MY CUP -->
+    <section class="section theme-dark grain" id="fix" aria-labelledby="fix-title">
+      <div class="wrap fix-grid">
+        <div data-reveal>
+          <p class="eyebrow">02 / Troubleshoot</p>
+          <h2 id="fix-title">Fix my cup.</h2>
+          <p class="lede">How does it taste? Pick the closest match and get the most likely cause plus things to try, one at a time.</p>
+          <div class="chips" id="fix-chips" role="radiogroup" aria-label="How does your coffee taste?" style="margin-top:var(--space-6)"></div>
+        </div>
+        <div class="fix-panel" id="fix-panel" aria-live="polite" data-reveal style="--i:1"></div>
+      </div>
+    </section>
+
+    <!-- SMALL RULES -->
+    <section class="section" aria-labelledby="faq-title">
+      <div class="wrap split">
+        <div class="split-head" data-reveal>
+          <p class="eyebrow">03 / Quick answers</p>
+          <h2 id="faq-title">Small rules.</h2>
+          <p class="lede">Short answers to the things people ask before their first good cup.</p>
+        </div>
+        <div class="accordion" data-reveal style="--i:1">
+          <details>
+            <summary>How should I store my beans?</summary>
+            <p class="answer">Keep them in an airtight container, away from light, heat and moisture. Buy amounts you can finish within a few weeks of the roast date, since flavour fades over time.</p>
+          </details>
+          <details>
+            <summary>Arabica or robusta?</summary>
+            <p class="answer">Arabica is generally sweeter and more aromatic, with more acidity. Robusta is usually more bitter and heavier-bodied, and has more caffeine. Neither is better, they are just different.</p>
+          </details>
+          <details>
+            <summary>Does the water really matter?</summary>
+            <p class="answer">Yes. Water makes up most of the cup. If your tap water tastes of chlorine or is very hard, filtered water will usually taste cleaner.</p>
+          </details>
+          <details>
+            <summary>How hot should the water be?</summary>
+            <p class="answer">For most hot methods, roughly 93 to 96 °C works well. That is just off the boil, so let the kettle sit for 30 seconds or so.</p>
+          </details>
+          <details>
+            <summary>Why weigh the coffee?</summary>
+            <p class="answer">Scoops vary a lot between roasts and grind sizes. A cheap scale makes every cup repeatable, which is the only way to improve on purpose.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer theme-dark grain">
+    <div class="wrap">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <p class="footer-big">Brew it <em>well.</em></p>
+          <p>A small home-brewing guide. Recipes, ratios and notes, all in one place.</p>
+        </div>
+        <nav class="footer-col" aria-label="Explore">
+          <h2>Explore</h2>
+          <a href="recipes.html">Recipes</a>
+          <a href="brew-lab.html">Brew Lab</a>
+          <a href="notes.html">Notes</a>
+        </nav>
+        <nav class="footer-col" aria-label="Quick links">
+          <h2>Quick links</h2>
+          <a href="recipes.html#random">Surprise me</a>
+          <a href="brew-lab.html#timer">Brew timer</a>
+          <a href="notes.html#fix">Fix my cup</a>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; <span data-year>2026</span> Coffee by Shameem</span>
+        <span>Drink responsibly. Caffeine adds up.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/notes.js"></script>
+</body>
+</html>

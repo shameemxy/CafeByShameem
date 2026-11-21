@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Recipes — Coffee by Shameem</title>
+  <meta name="description" content="Espresso, cappuccino, flat white, V60, French press, cold brew, filter kaapi and more. Filter by style and scale every recipe to your servings.">
+  <meta name="theme-color" content="#f4ead9">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Recipes — Coffee by Shameem">
+  <meta property="og:description" content="Nine coffee recipes with scalable amounts and step-by-step methods.">
+  <meta property="og:image" content="assets/og-image.png">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/fraunces-latin-full-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/fonts.css">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="index.html" aria-label="Coffee by Shameem, home">
+        <svg viewBox="0 0 32 32" aria-hidden="true"><ellipse cx="16" cy="16" rx="9" ry="12.5" transform="rotate(30 16 16)" fill="currentColor"/><path d="M10.5 6.2c4 3.4 1 6.6 4.6 9.7s.6 6.4 3.4 10" fill="none" stroke="var(--bg)" stroke-width="2" stroke-linecap="round"/></svg>
+        <span>Coffee <em>by Shameem</em></span>
+      </a>
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu"><span></span><span></span></button>
+      <nav class="nav" id="site-nav" aria-label="Primary">
+        <ul>
+          <li><a href="recipes.html" aria-current="page">Recipes</a></li>
+          <li><a href="brew-lab.html">Brew Lab</a></li>
+          <li><a href="notes.html">Notes</a></li>
+          <li><a class="nav-cta" href="recipes.html#random">Surprise me</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-head">
+      <div class="wrap">
+        <p class="eyebrow">The recipe book</p>
+        <h1>Nine ways to <em>brew.</em></h1>
+        <p class="lede">Choose a style, open a recipe, and set how many you're making. Amounts rescale automatically.</p>
+      </div>
+    </section>
+
+    <section class="wrap" aria-label="Recipe library">
+      <div class="toolbar">
+        <div class="chips" id="filters" role="group" aria-label="Filter by style"></div>
+        <div class="search">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></svg>
+          <label class="visually-hidden" for="q">Search recipes</label>
+          <input class="input" id="q" type="search" placeholder="Search recipes" autocomplete="off">
+        </div>
+        <p class="result-count" id="count" aria-live="polite"></p>
+      </div>
+
+      <noscript><p style="padding:2rem 0">Recipes need JavaScript to load. Please enable it and refresh.</p></noscript>
+      <div class="recipe-list" id="list"></div>
+
+      <div class="empty-state" id="empty">
+        <h2>Nothing matches that.</h2>
+        <p>Try a different word, or clear the filters to see every recipe.</p>
+        <button class="btn btn--ghost" type="button" id="reset">Clear filters</button>
+      </div>
+    </section>
+
+    <div style="height:var(--section-y)"></div>
+  </main>
+
+  <dialog class="dialog" id="recipe-dialog" aria-labelledby="rd-title">
+    <button class="icon-btn dialog-close" type="button" id="rd-close" aria-label="Close recipe"></button>
+    <div class="dialog-scroll" id="rd-content"></div>
+  </dialog>
+
+  <footer class="site-footer theme-dark grain">
+    <div class="wrap">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <p class="footer-big">Brew it <em>well.</em></p>
+          <p>A small home-brewing guide. Recipes, ratios and notes, all in one place.</p>
+        </div>
+        <nav class="footer-col" aria-label="Explore">
+          <h2>Explore</h2>
+          <a href="recipes.html">Recipes</a>
+          <a href="brew-lab.html">Brew Lab</a>
+          <a href="notes.html">Notes</a>
+        </nav>
+        <nav class="footer-col" aria-label="Quick links">
+          <h2>Quick links</h2>
+          <a href="recipes.html#random">Surprise me</a>
+          <a href="brew-lab.html#timer">Brew timer</a>
+          <a href="notes.html#fix">Fix my cup</a>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; <span data-year>2026</span> Coffee by Shameem</span>
+        <span>Drink responsibly. Caffeine adds up.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/recipes.js"></script>
+</body>
+</html>

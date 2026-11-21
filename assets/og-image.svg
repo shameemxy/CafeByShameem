@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <radialGradient id="glow" cx="78%" cy="50%" r="60%"><stop offset="0" stop-color="#5a3b2a"/><stop offset="1" stop-color="#150d09"/></radialGradient>
+    <radialGradient id="coffee" cx="50%" cy="46%" r="55%"><stop offset="0" stop-color="#8a5a35"/><stop offset="1" stop-color="#3b2014"/></radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+  <g transform="translate(760 55) scale(0.84)">
+    <circle cx="300" cy="300" r="270" fill="#e8d7bb"/>
+    <circle cx="300" cy="300" r="212" fill="#f4ead9"/>
+    <circle cx="300" cy="300" r="178" fill="url(#coffee)"/>
+    <g fill="#f4ead9" stroke="#5a3320" stroke-width="2.5" stroke-linejoin="round">
+      <path d="M222 392Q261 352 300 362Q339 352 378 392Q300 418 222 392Z"/>
+      <path d="M230 362Q265 322 300 332Q335 322 370 362Q300 388 230 362Z"/>
+      <path d="M239 332Q269.500 292 300 302Q330.500 292 361 332Q300 358 239 332Z"/>
+      <path d="M249 302Q274.500 262 300 272Q325.500 262 351 302Q300 328 249 302Z"/>
+      <path d="M260 272Q280 232 300 242Q320 232 340 272Q300 298 260 272Z"/>
+      <path d="M272 244Q286 204 300 214Q314 204 328 244Q300 270 272 244Z"/>
+    </g>
+    <path d="M300 422V214" stroke="#5a3320" stroke-width="5" stroke-linecap="round"/>
+  </g>
+  <text x="72" y="250" font-family="Georgia, serif" font-size="92" fill="#f4ead9" letter-spacing="-2">Coffee,</text>
+  <text x="72" y="350" font-family="Georgia, serif" font-size="92" fill="#f4ead9" letter-spacing="-2">brewed with</text>
+  <text x="72" y="450" font-family="Georgia, serif" font-style="italic" font-size="92" fill="#e0a15c" letter-spacing="-2">intent.</text>
+  <text x="76" y="540" font-family="Menlo, Consolas, monospace" font-size="24" fill="#c4ad92" letter-spacing="3">COFFEE BY SHAMEEM</text>
+</svg>

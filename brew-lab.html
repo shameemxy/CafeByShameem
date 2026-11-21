@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Brew Lab — ratio calculator, brew timer and grind guide</title>
+  <meta name="description" content="Work out coffee-to-water ratios for espresso, pour-over, French press and cold brew. Follow a guided V60 timer and pick the right grind size.">
+  <meta name="theme-color" content="#f4ead9">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Brew Lab — Coffee by Shameem">
+  <meta property="og:description" content="A ratio calculator, guided brew timer and grind guide.">
+  <meta property="og:image" content="assets/og-image.png">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/fraunces-latin-full-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/fonts.css">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="index.html" aria-label="Coffee by Shameem, home">
+        <svg viewBox="0 0 32 32" aria-hidden="true"><ellipse cx="16" cy="16" rx="9" ry="12.5" transform="rotate(30 16 16)" fill="currentColor"/><path d="M10.5 6.2c4 3.4 1 6.6 4.6 9.7s.6 6.4 3.4 10" fill="none" stroke="var(--bg)" stroke-width="2" stroke-linecap="round"/></svg>
+        <span>Coffee <em>by Shameem</em></span>
+      </a>
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu"><span></span><span></span></button>
+      <nav class="nav" id="site-nav" aria-label="Primary">
+        <ul>
+          <li><a href="recipes.html">Recipes</a></li>
+          <li><a href="brew-lab.html" aria-current="page">Brew Lab</a></li>
+          <li><a href="notes.html">Notes</a></li>
+          <li><a class="nav-cta" href="recipes.html#random">Surprise me</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-head">
+      <div class="wrap">
+        <p class="eyebrow">The Brew Lab</p>
+        <h1>Measure it. <em>Time it.</em></h1>
+        <p class="lede">Three small tools for the parts of brewing that are easy to get wrong: how much, how long, how fine.</p>
+      </div>
+    </section>
+
+    <!-- RATIO CALCULATOR -->
+    <section class="section" id="ratio" style="padding-top:var(--space-6)" aria-labelledby="ratio-title">
+      <div class="wrap lab-block">
+        <div class="lab-controls" data-reveal>
+          <div>
+            <p class="eyebrow">01 / How much</p>
+            <h2 id="ratio-title">Ratio calculator</h2>
+            <p class="lede">Pick a method, then enter either the coffee or the water you have. The other one fills itself in.</p>
+          </div>
+          <div class="field">
+            <span class="label" id="method-label">Method</span>
+            <div class="chips" id="calc-methods" role="radiogroup" aria-labelledby="method-label"></div>
+          </div>
+          <div class="pair">
+            <div class="field">
+              <label for="calc-coffee">Coffee</label>
+              <div class="input-unit"><input class="input input--num" id="calc-coffee" type="number" inputmode="decimal" min="0" step="0.5" value="18"><span>g</span></div>
+            </div>
+            <div class="field">
+              <label for="calc-water">Water</label>
+              <div class="input-unit"><input class="input input--num" id="calc-water" type="number" inputmode="decimal" min="0" step="1" value="288"><span>g</span></div>
+            </div>
+          </div>
+          <div class="field">
+            <label for="calc-ratio">Fine-tune ratio</label>
+            <input id="calc-ratio" type="range" min="1.5" max="20" step="0.5" value="16">
+          </div>
+        </div>
+
+        <div class="readout theme-dark grain" data-reveal style="--i:1">
+          <div class="dial-top">
+            <div>
+              <div class="label">Your ratio</div>
+              <div class="dial-ratio">1:<span id="calc-ratio-val">16</span></div>
+            </div>
+            <div style="text-align:right">
+              <div class="label">Water for</div>
+              <div class="dial-out"><output id="calc-out-water">288</output><small>g</small></div>
+            </div>
+          </div>
+          <div class="bar" aria-hidden="true"><div class="b-coffee" id="calc-bar"></div><div class="b-water"></div></div>
+          <div class="bar-legend" aria-hidden="true"><span id="calc-leg-coffee">18 g coffee</span><span id="calc-leg-water">288 g water</span></div>
+          <p class="readout-note" id="calc-note" aria-live="polite"></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- TIMER -->
+    <section class="section theme-dark grain" id="timer" aria-labelledby="timer-title">
+      <div class="wrap timer-wrap">
+        <div data-reveal>
+          <p class="eyebrow">02 / How long</p>
+          <h2 id="timer-title" style="font-size:var(--step-4);margin-block:var(--space-4) var(--space-5)">Guided brew timer</h2>
+          <p class="lede">Pick a method and press start. Each stage tells you what to do and how much water to be at.</p>
+          <div class="field" style="margin-top:var(--space-6)">
+            <span class="label" id="tm-label">Method</span>
+            <div class="chips" id="timer-methods" role="radiogroup" aria-labelledby="tm-label"></div>
+          </div>
+          <div class="field" id="timer-water-field" style="margin-top:var(--space-5);max-width:240px">
+            <label for="timer-water">Total water</label>
+            <div class="input-unit"><input class="input input--num" id="timer-water" type="number" inputmode="decimal" min="50" max="1000" step="10" value="320"><span>g</span></div>
+          </div>
+          <ol class="stage-list" id="stage-list"></ol>
+        </div>
+
+        <div class="timer-face" data-reveal style="--i:1">
+          <div class="label">Elapsed</div>
+          <div class="timer-clock" id="clock" role="timer" aria-label="Elapsed time">0:00</div>
+          <div class="progress" aria-hidden="true"><i id="progress"></i></div>
+          <div class="timer-now" id="now" aria-live="polite"></div>
+          <div class="timer-actions">
+            <button class="btn" type="button" id="tm-start">Start</button>
+            <button class="btn btn--ghost" type="button" id="tm-reset">Reset</button>
+            <label class="toggle"><input type="checkbox" id="tm-chime"><span class="sw" aria-hidden="true"></span>Chime between stages</label>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GRIND GUIDE -->
+    <section class="section" id="grind" aria-labelledby="grind-title">
+      <div class="wrap">
+        <div data-reveal>
+          <p class="eyebrow">03 / How fine</p>
+          <h2 id="grind-title" style="font-size:var(--step-4);margin-block:var(--space-4) var(--space-5)">Grind guide</h2>
+          <p class="lede">Finer grounds slow the water down and extract more. Coarser grounds let it through faster. Select a size to see what it suits.</p>
+        </div>
+        <div class="grind-scale" id="grind-scale" role="group" aria-label="Grind sizes" data-reveal style="--i:1"></div>
+        <div class="grind-detail" id="grind-detail" aria-live="polite"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer theme-dark grain">
+    <div class="wrap">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <p class="footer-big">Brew it <em>well.</em></p>
+          <p>A small home-brewing guide. Recipes, ratios and notes, all in one place.</p>
+        </div>
+        <nav class="footer-col" aria-label="Explore">
+          <h2>Explore</h2>
+          <a href="recipes.html">Recipes</a>
+          <a href="brew-lab.html">Brew Lab</a>
+          <a href="notes.html">Notes</a>
+        </nav>
+        <nav class="footer-col" aria-label="Quick links">
+          <h2>Quick links</h2>
+          <a href="recipes.html#random">Surprise me</a>
+          <a href="brew-lab.html#timer">Brew timer</a>
+          <a href="notes.html#fix">Fix my cup</a>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; <span data-year>2026</span> Coffee by Shameem</span>
+        <span>Drink responsibly. Caffeine adds up.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/brew-lab.js"></script>
+</body>
+</html>

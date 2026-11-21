@@ -1,0 +1,111 @@
+/* ==========================================================================
+   Coffee by Shameem — design tokens
+   Palette seeded from the ui-ux-pro-max coffee/amber match (#92400E, #B45309),
+   extended with a dark espresso ramp for the cinematic sections.
+   ========================================================================== */
+
+:root {
+  /* Raw ramps ----------------------------------------------------------- */
+  --espresso-950: #150d09;
+  --espresso-900: #1f130e;
+  --espresso-800: #2e1c14;
+  --espresso-700: #412a1e;
+  --espresso-600: #5a3b2a;
+
+  --crema-50:  #fbf6ec;
+  --crema-100: #f4ead9;
+  --crema-200: #e8d7bb;
+  --crema-300: #d6bf99;
+
+  --caramel-700: #7a3409;
+  --caramel-600: #92400e;
+  --caramel-500: #b45309;
+  --ember-400:   #e0a15c;
+  --ember-300:   #ecbb85;
+
+  --success: #3f7d4e;
+  --danger:  #b3261e;
+
+  /* Semantic (light / paper) ------------------------------------------- */
+  --bg:          var(--crema-100);
+  --bg-alt:      var(--crema-200);
+  --surface:     var(--crema-50);
+  --text:        var(--espresso-800);
+  --text-muted:  #6b5446;           /* 5.8:1 on --bg */
+  --line:        rgba(46, 28, 20, 0.16);
+  --line-strong: rgba(46, 28, 20, 0.38);
+  --accent:      var(--caramel-600); /* 6.4:1 on --bg */
+  --accent-ink:  #ffffff;
+  --accent-hover: var(--caramel-700);
+  --focus:       var(--caramel-500);
+
+  /* Type ---------------------------------------------------------------- */
+  --font-display: 'Fraunces', 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --font-body:    'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-mono:    'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+
+  --step--2: clamp(0.72rem, 0.70rem + 0.10vw, 0.78rem);
+  --step--1: clamp(0.80rem, 0.78rem + 0.12vw, 0.88rem);
+  --step-0:  clamp(1.00rem, 0.96rem + 0.20vw, 1.10rem);
+  --step-1:  clamp(1.20rem, 1.12rem + 0.40vw, 1.45rem);
+  --step-2:  clamp(1.50rem, 1.30rem + 1.00vw, 2.10rem);
+  --step-3:  clamp(1.90rem, 1.50rem + 2.00vw, 3.10rem);
+  --step-4:  clamp(2.40rem, 1.70rem + 3.50vw, 4.60rem);
+  --step-5:  clamp(3.00rem, 1.60rem + 7.00vw, 7.40rem);
+
+  /* Space (4px base) ---------------------------------------------------- */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4.5rem;
+  --space-9: 7rem;
+
+  --section-y: clamp(4.5rem, 9vw, 8.5rem);
+  --gutter:    clamp(1.25rem, 5vw, 3.5rem);
+  --wrap:      1240px;
+  --header-h:  72px;
+
+  /* Shape & depth ------------------------------------------------------- */
+  --radius-sm: 6px;
+  --radius-md: 14px;
+  --radius-lg: 28px;
+  --radius-pill: 999px;
+  --shadow-1: 0 1px 2px rgba(31, 19, 14, 0.08), 0 4px 14px rgba(31, 19, 14, 0.06);
+  --shadow-2: 0 10px 40px rgba(21, 13, 9, 0.28);
+
+  /* Motion -------------------------------------------------------------- */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-fast: 160ms;
+  --dur-med: 280ms;
+  --dur-slow: 720ms;
+}
+
+/* Dark / espresso scope ------------------------------------------------- */
+.theme-dark {
+  --bg:          var(--espresso-900);
+  --bg-alt:      var(--espresso-800);
+  --surface:     var(--espresso-800);
+  --text:        var(--crema-100);
+  --text-muted:  #c4ad92;            /* 8.9:1 on espresso-900 */
+  --line:        rgba(244, 234, 217, 0.16);
+  --line-strong: rgba(244, 234, 217, 0.4);
+  --accent:      var(--ember-400);
+  --accent-ink:  var(--espresso-950);
+  --accent-hover: var(--ember-300);
+  --focus:       var(--ember-300);
+  background: var(--bg);
+  color: var(--text);
+}
+
+.theme-latte {
+  --bg:      var(--crema-200);
+  --bg-alt:  var(--crema-300);
+  --line:    rgba(46, 28, 20, 0.2);
+  background: var(--bg);
+  color: var(--text);
+}

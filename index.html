@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Coffee by Shameem — recipes, ratios and a brew timer</title>
+  <meta name="description" content="Nine coffee recipes with scalable ingredients, a ratio calculator, a guided brew timer and plain-English troubleshooting. Brew a better cup at home.">
+  <meta name="theme-color" content="#150d09">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Coffee by Shameem">
+  <meta property="og:description" content="Nine recipes, a ratio calculator and a guided brew timer for better coffee at home.">
+  <meta property="og:image" content="assets/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/fraunces-latin-full-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/fonts.css">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body class="has-dark-hero">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="index.html" aria-label="Coffee by Shameem, home">
+        <svg viewBox="0 0 32 32" aria-hidden="true"><ellipse cx="16" cy="16" rx="9" ry="12.5" transform="rotate(30 16 16)" fill="currentColor"/><path d="M10.5 6.2c4 3.4 1 6.6 4.6 9.7s.6 6.4 3.4 10" fill="none" stroke="var(--espresso-900)" stroke-width="2" stroke-linecap="round"/></svg>
+        <span>Coffee <em>by Shameem</em></span>
+      </a>
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu"><span></span><span></span></button>
+      <nav class="nav" id="site-nav" aria-label="Primary">
+        <ul>
+          <li><a href="recipes.html">Recipes</a></li>
+          <li><a href="brew-lab.html">Brew Lab</a></li>
+          <li><a href="notes.html">Notes</a></li>
+          <li><a class="nav-cta" href="recipes.html#random">Surprise me</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero theme-dark grain" data-spotlight aria-labelledby="hero-title">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Home brewing, done properly</p>
+          <h1 id="hero-title">
+            <span class="l"><span style="--i:0">Coffee,</span></span>
+            <span class="l"><span style="--i:1">brewed with</span></span>
+            <span class="l"><span style="--i:2"><em>intent.</em></span></span>
+          </h1>
+          <p class="lede">Recipes with real weights, a ratio calculator, and a timer that talks you through each pour. No gear snobbery, just the next good cup.</p>
+          <div class="hero-cta">
+            <a class="btn" href="recipes.html">Browse recipes <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            <a class="btn btn--ghost" href="brew-lab.html">Open the Brew Lab</a>
+          </div>
+        </div>
+
+        <div class="hero-art" aria-hidden="true">
+          <div data-parallax>
+            <svg viewBox="0 0 600 600" focusable="false">
+              <defs>
+                <radialGradient id="coffee" cx="50%" cy="46%" r="55%">
+                  <stop offset="0" stop-color="#8a5a35"/>
+                  <stop offset="0.7" stop-color="#5a3320"/>
+                  <stop offset="1" stop-color="#3b2014"/>
+                </radialGradient>
+                <radialGradient id="saucer" cx="40%" cy="36%" r="75%">
+                  <stop offset="0" stop-color="#f4ead9"/>
+                  <stop offset="1" stop-color="#cdb48c"/>
+                </radialGradient>
+                <filter id="soft" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="14"/></filter>
+              </defs>
+              <circle class="ripple" cx="300" cy="300" r="285" fill="none" stroke="#e0a15c" stroke-width="2"/>
+              <circle class="ripple" cx="300" cy="300" r="285" fill="none" stroke="#e0a15c" stroke-width="2"/>
+              <circle class="ripple" cx="300" cy="300" r="285" fill="none" stroke="#e0a15c" stroke-width="2"/>
+              <circle cx="312" cy="326" r="270" fill="#000" opacity="0.5" filter="url(#soft)"/>
+              <circle cx="300" cy="300" r="270" fill="url(#saucer)"/>
+              <circle cx="300" cy="300" r="246" fill="none" stroke="#b79a70" stroke-width="1.5" opacity="0.7"/>
+              <path d="M492 262H536Q578 262 578 300Q578 338 536 338H492" fill="none" stroke="#e8d7bb" stroke-width="30" stroke-linejoin="round" stroke-linecap="round"/>
+              <circle cx="300" cy="300" r="212" fill="#f4ead9"/>
+              <circle cx="300" cy="300" r="196" fill="#dfc9a4"/>
+              <circle cx="300" cy="300" r="178" fill="url(#coffee)"/>
+              <circle cx="300" cy="300" r="178" fill="none" stroke="#c18a58" stroke-width="9" opacity="0.55"/>
+              <g fill="#f4ead9" stroke="#5a3320" stroke-width="2.5" stroke-linejoin="round">
+                <path d="M222 392Q261 352 300 362Q339 352 378 392Q300 418 222 392Z"/>
+                <path d="M230 362Q265 322 300 332Q335 322 370 362Q300 388 230 362Z"/>
+                <path d="M239 332Q269.5 292 300 302Q330.5 292 361 332Q300 358 239 332Z"/>
+                <path d="M249 302Q274.5 262 300 272Q325.5 262 351 302Q300 328 249 302Z"/>
+                <path d="M260 272Q280 232 300 242Q320 232 340 272Q300 298 260 272Z"/>
+                <path d="M272 244Q286 204 300 214Q314 204 328 244Q300 270 272 244Z"/>
+              </g>
+              <path d="M300 422V214" stroke="#5a3320" stroke-width="5" stroke-linecap="round"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <div class="wrap">
+        <ul class="hero-meta">
+          <li><b>09</b>recipes with scalable amounts</li>
+          <li><b>01</b>ratio calculator</li>
+          <li><b>01</b>guided brew timer</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- METHOD INDEX -->
+    <section class="section" aria-labelledby="index-title">
+      <div class="wrap split">
+        <div class="split-head" data-reveal>
+          <p class="eyebrow">The index</p>
+          <h2 id="index-title">Pick a method, start brewing.</h2>
+          <p class="lede">Every recipe opens with weights you can scale, checkable ingredients and numbered steps. Nothing to sign up for.</p>
+        </div>
+        <div>
+          <ol class="index-list" id="method-index" data-reveal style="--i:1"></ol>
+          <div class="index-foot"><a class="link-arrow" href="recipes.html">See all with filters <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SURPRISE ME -->
+    <section class="section theme-latte" id="surprise" aria-labelledby="surprise-title">
+      <div class="wrap surprise-grid">
+        <div data-reveal>
+          <p class="eyebrow">Can't decide?</p>
+          <h2 id="surprise-title">Let the grinder decide.</h2>
+          <p class="lede">One press picks a recipe at random. Cycle until something sounds good, then open the full version.</p>
+          <button class="btn" type="button" id="surprise-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="3"/><circle cx="9" cy="9" r="1" fill="currentColor"/><circle cx="15" cy="15" r="1" fill="currentColor"/><circle cx="15" cy="9" r="1" fill="currentColor"/><circle cx="9" cy="15" r="1" fill="currentColor"/></svg>
+            <span>Pick a recipe</span>
+          </button>
+        </div>
+        <div class="pick-panel" id="pick-panel" aria-live="polite" data-reveal style="--i:1">
+          <div class="pick-empty">
+            <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 26h30v12a14 14 0 0 1-14 14h-2a14 14 0 0 1-14-14V26z"/><path d="M44 30h3.5a5.5 5.5 0 0 1 0 11H43"/><path d="M10 58h40"/></svg>
+            <p>Your recipe will appear here.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RATIO DIAL -->
+    <section class="section theme-dark grain" aria-labelledby="dial-title">
+      <div class="wrap dial-grid">
+        <div data-reveal>
+          <p class="eyebrow">Brew Lab</p>
+          <h2 id="dial-title">Ratio is the whole game.</h2>
+          <p class="lede">Most bad coffee is a ratio problem, not a beans problem. Drag the slider and watch the water change.</p>
+          <a class="link-arrow" href="brew-lab.html">Open the full calculator and timer <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+
+        <div class="dial" data-reveal style="--i:1">
+          <div class="dial-top">
+            <div>
+              <div class="label">Coffee to water</div>
+              <div class="dial-ratio">1:<span id="dial-ratio-val">16</span></div>
+            </div>
+            <div class="dial-zone" id="dial-zone" aria-live="polite"></div>
+          </div>
+          <div class="bar" aria-hidden="true"><div class="b-coffee" id="dial-bar" style="flex-basis:6%"></div><div class="b-water"></div></div>
+          <div class="bar-legend" aria-hidden="true"><span>coffee</span><span>water</span></div>
+          <div class="dial-controls">
+            <div class="field">
+              <label for="dial-coffee">Coffee</label>
+              <div class="input-unit"><input class="input input--num" id="dial-coffee" type="number" inputmode="decimal" min="1" max="500" step="1" value="18"><span>g</span></div>
+            </div>
+            <div class="field">
+              <span class="label">Water you need</span>
+              <div class="dial-out"><output id="dial-water" for="dial-coffee dial-ratio">288</output><small>g</small></div>
+            </div>
+          </div>
+          <div class="field" style="margin-top:var(--space-4)">
+            <label for="dial-ratio">Ratio</label>
+            <input id="dial-ratio" type="range" min="2" max="18" step="0.5" value="16" aria-describedby="dial-zone">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MARGIN NOTES -->
+    <section class="section" aria-labelledby="notes-title">
+      <div class="wrap">
+        <div class="notes-head" data-reveal>
+          <div>
+            <p class="eyebrow">Margin notes</p>
+            <h2 id="notes-title">Three things worth knowing.</h2>
+          </div>
+          <a class="link-arrow" href="notes.html">More in the Notes <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+        <div class="margin-notes">
+          <article class="margin-note" data-reveal>
+            <span class="mono">01 / Origin</span>
+            <h3>A bean is a seed.</h3>
+            <p>Coffee beans are the seeds of coffee cherries. The shrubs grow in more than 70 countries.</p>
+          </article>
+          <article class="margin-note" data-reveal style="--i:1">
+            <span class="mono">02 / Technique</span>
+            <h3>Grind just before you brew.</h3>
+            <p>Grinding right before brewing keeps the aromas and oils that fade quickly once the bean is broken.</p>
+          </article>
+          <article class="margin-note" data-reveal style="--i:2">
+            <span class="mono">03 / Health</span>
+            <h3>Moderation pays off.</h3>
+            <p>Moderate coffee consumption has been linked to several health benefits, including a lower risk of certain diseases.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer theme-dark grain">
+    <div class="wrap">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <p class="footer-big">Brew it <em>well.</em></p>
+          <p>A small home-brewing guide. Recipes, ratios and notes, all in one place.</p>
+        </div>
+        <nav class="footer-col" aria-label="Explore">
+          <h2>Explore</h2>
+          <a href="recipes.html">Recipes</a>
+          <a href="brew-lab.html">Brew Lab</a>
+          <a href="notes.html">Notes</a>
+        </nav>
+        <nav class="footer-col" aria-label="Quick links">
+          <h2>Quick links</h2>
+          <a href="recipes.html#random">Surprise me</a>
+          <a href="brew-lab.html#timer">Brew timer</a>
+          <a href="notes.html#fix">Fix my cup</a>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; <span data-year>2026</span> Coffee by Shameem</span>
+        <span>Drink responsibly. Caffeine adds up.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/home.js"></script>
+</body>
+</html>

@@ -1,0 +1,140 @@
+/* ==========================================================================
+   Base: reset, typography, layout primitives, accessibility helpers
+   ========================================================================== */
+
+*, *::before, *::after { box-sizing: border-box; }
+* { margin: 0; }
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  scroll-padding-top: calc(var(--header-h) + 16px);
+  scrollbar-color: var(--espresso-600) var(--crema-200);
+  scrollbar-width: thin;
+}
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--step-0);
+  line-height: 1.65;
+  color: var(--text);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+body > main { flex: 1 0 auto; }
+body.is-locked { overflow: hidden; }
+
+::selection { background: var(--caramel-600); color: var(--crema-50); }
+
+img, svg, video { display: block; max-width: 100%; }
+button, input, select, textarea { font: inherit; color: inherit; }
+button { cursor: pointer; background: none; border: 0; padding: 0; }
+a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 0.2em; }
+ul, ol { padding: 0; list-style: none; }
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  line-height: 1.04;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+  font-variation-settings: 'opsz' 96, 'SOFT' 50;
+}
+p { text-wrap: pretty; max-width: 62ch; }
+
+:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Layout primitives ------------------------------------------------------ */
+.wrap {
+  width: 100%;
+  max-width: calc(var(--wrap) + var(--gutter) * 2);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+.section { padding-block: var(--section-y); position: relative; }
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: var(--step--2);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+.eyebrow::before {
+  content: '';
+  width: 28px;
+  height: 1px;
+  background: currentColor;
+}
+
+.mono { font-family: var(--font-mono); font-feature-settings: 'zero' 1; }
+.muted { color: var(--text-muted); }
+.lede { font-size: var(--step-1); line-height: 1.55; color: var(--text-muted); max-width: 52ch; }
+
+/* Accessibility helpers -------------------------------------------------- */
+.visually-hidden {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+.skip-link {
+  position: fixed;
+  top: 12px; left: 12px;
+  z-index: 200;
+  padding: 12px 18px;
+  background: var(--crema-50);
+  color: var(--espresso-900);
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  transform: translateY(-160%);
+  transition: transform var(--dur-fast) var(--ease-out);
+}
+.skip-link:focus { transform: translateY(0); }
+
+/* Grain overlay (static, GPU-cheap) -------------------------------------- */
+.grain::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.09;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 0.9 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+}
+
+/* Scroll reveal ---------------------------------------------------------- */
+.js [data-reveal] {
+  opacity: 0;
+  transform: translateY(26px);
+  transition: opacity var(--dur-slow) var(--ease-out), transform var(--dur-slow) var(--ease-out);
+  transition-delay: calc(var(--i, 0) * 80ms);
+}
+.js [data-reveal].is-in { opacity: 1; transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    transition-delay: 0ms !important;
+  }
+  .js [data-reveal] { opacity: 1; transform: none; }
+}
