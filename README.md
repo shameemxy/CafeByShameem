@@ -21,10 +21,4 @@ js/    data.js (recipes + icons) · main.js (shared) · home.js · recipes.js ·
 assets/ favicon.svg · og-image.svg/.png · fonts/ (self-hosted, OFL)
 design-system/MASTER.md   design decisions
 ```
-Edit recipes in `js/data.js`; colours and spacing in `css/tokens.css`.
 
-## Before you publish
-- `sitemap.xml` and canonical URLs are not included because they need your real domain. Add them, and the `Sitemap:` line in `robots.txt`.
-- Recipe amounts are standard home-brewing guidance, not lab-tested for your equipment. Adjust to taste.
-- Roast "trait" bars on the Notes page are general tendencies, not measurements.
-- The original photo assets were not part of the files I received, so the site uses custom SVG art instead of photos. Add real photos of your own drinks if you have them.
